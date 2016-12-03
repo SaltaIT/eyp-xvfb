@@ -1,12 +1,10 @@
 class xvfb::params {
 
-  $package_name='xvfb'
-  $service_name='xvfb'
-
   case $::osfamily
   {
     'redhat':
     {
+      $package_name='xorg-x11-server-Xvfb'
       case $::operatingsystemrelease
       {
         /^[5-7].*$/:
@@ -17,6 +15,7 @@ class xvfb::params {
     }
     'Debian':
     {
+      $package_name='xvfb'
       case $::operatingsystem
       {
         'Ubuntu':

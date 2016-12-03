@@ -10,8 +10,6 @@ class xvfb(
   validate_re($package_ensure, [ '^present$', '^installed$', '^absent$', '^purged$', '^held$', '^latest$' ], 'Not a supported package_ensure: present/absent/purged/held/latest')
 
   class { '::xvfb::install': } ->
-  class { '::xvfb::config': } ~>
-  class { '::xvfb::service': } ->
   Class['::xvfb']
 
 }
