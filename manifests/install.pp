@@ -7,4 +7,13 @@ class xvfb::install inherits xvfb {
     }
   }
 
+  if($xvfb::params::systemd)
+  {
+    include ::systemd
+
+    systemd::service { 'xvfb@':
+      execstart   => '/usr/bin/Xvfb %i',
+      description => 'Xvfb (%i)',
+    }
+  }
 }
