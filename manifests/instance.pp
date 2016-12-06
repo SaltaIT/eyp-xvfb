@@ -21,8 +21,9 @@ define xvfb::instance(
     if($manage_service)
     {
       service { "xvfb@${display}":
-        ensure => $service_ensure,
-        enable => $service_enable,
+        ensure  => $service_ensure,
+        enable  => $service_enable,
+        require => Class['::xvfb'],
       }
     }
   }
