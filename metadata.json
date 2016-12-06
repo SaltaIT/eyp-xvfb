@@ -2,7 +2,7 @@
   "name": "eyp-xvfb",
   "version": "0.1.0",
   "author": "eyp",
-  "summary": null,
+  "summary": "multi instance Xvfb management",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-xvfb",
   "project_page": null,
