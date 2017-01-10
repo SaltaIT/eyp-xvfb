@@ -7,12 +7,21 @@ class xvfb::install inherits xvfb {
     }
   }
 
+  if($xvfb::listen_tcp)
+  {
+    $exec_start_cmd='/usr/bin/Xvfb %i'
+  }
+  else
+  {
+    $exec_start_cmd='/usr/bin/Xvfb %i -nolisten tcp'
+  }
+
   if($xvfb::params::systemd)
   {
     include ::systemd
 
     systemd::service { 'xvfb@':
-      execstart   => '/usr/bin/Xvfb %i',
+      execstart   => $exec_start_cmd,
       description => 'Xvfb (%i)',
     }
   }

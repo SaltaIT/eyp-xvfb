@@ -10,6 +10,14 @@ describe 'xvfb class' do
 
       class { 'xvfb': }
 
+      xvfb::instance { ':15':
+        listen_tcp => true,
+      }
+
+      xvfb::instance { ':16':
+        listen_tcp => false,
+      }
+
       EOF
 
       # Run it twice and test for idempotency
