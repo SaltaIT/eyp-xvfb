@@ -8,14 +8,14 @@ describe 'xvfb class' do
     it 'should work with no errors' do
       pp = <<-EOF
 
-      class { 'xvfb': }
+      class { 'xvfb':
+        listen_tcp => false,
+      }
 
       xvfb::instance { ':15':
-        listen_tcp => true,
       }
 
       xvfb::instance { ':16':
-        listen_tcp => false,
       }
 
       EOF
