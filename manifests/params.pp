@@ -9,6 +9,7 @@ class xvfb::params {
       {
         /^[56].*$/:
         {
+          fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")
           $systemd=false
         }
         /^7.*$/:
@@ -29,6 +30,7 @@ class xvfb::params {
           {
             /^14.*$/:
             {
+              fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")
               $systemd=false
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
