@@ -1,6 +1,6 @@
 {
   "name": "eyp-xvfb",
-  "version": "0.1.3",
+  "version": "1.0.3",
   "author": "Jordi Prats",
   "summary": "multi instance Xvfb management",
   "license": "Apache-2.0",
